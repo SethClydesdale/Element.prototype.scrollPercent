@@ -24,11 +24,11 @@ The return value is an object with the properties top and left. The minimum valu
 Let's say for example, we've scrolled the document near to the end.
 
 ```javascript
-document.body.scrollPercent(); // {top: 80.27613412228797, left: NaN}
+var scrolled = document.body.scrollPercent();
 
-// access the specific property you want to check
-document.body.scrollPercent().top; // 80.27613412228797
-document.body.scrollPercent().left; // NaN
+scrolled; // {top: 80.27613412228797, left: NaN}
+scrolled.top; // 80.27613412228797
+scrolled.left; // NaN
 ```
 
 **Note :** Some browsers ( Such as firefox ) need to use ``document.documentElement`` to calculate the percentage the document has been scrolled. For other elements, the calculation should be fine across all browsers.
