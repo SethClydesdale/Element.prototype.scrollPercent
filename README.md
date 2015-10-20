@@ -2,15 +2,21 @@
 
 This method is used to calculate the percentage an element has been scrolled vertically and horizontally.
 
-### Syntax
+**Jump to :**
+- [Syntax](#syntax)
+- [Return Value](#return-value)
+- [Example](#example)
+- [Browser Support](#browser-support)
+
+## Syntax
 
 ```javascript
 Element.scrollPercent();
 ```
 
-### Return Value
+## Return Value
 
-The return value is an object with the properties top and left. The minimum value is 0 and the maximum value is 100. If there's no scrollbar, the return value will be ``NaN``.
+The return value is an object with the properties ``top`` and ``left``, which indicates the percentage an element has been scrolled. The minimum value is 0 and the maximum value is 100. If there's no scrollbar, the return value will be ``NaN``.
 
 ```javascript
 {
@@ -19,9 +25,11 @@ The return value is an object with the properties top and left. The minimum valu
 }
 ```
 
-### Example
+The ``top`` property indicates the percentage an element has been scrolled from the top, and the ``left`` property indicates the percentage an element has been scrolled from the left.
 
-Let's say for example, we've scrolled the document near to the end.
+## Example
+
+This is an example of a partially scrolled document.
 
 ```javascript
 var scrolled = document.body.scrollPercent();
@@ -31,4 +39,14 @@ scrolled.top; // 80.27613412228797
 scrolled.left; // NaN
 ```
 
-**Note :** Some browsers ( Such as firefox ) need to use ``document.documentElement`` to calculate the percentage the document has been scrolled. For other elements, the calculation should be fine across all browsers.
+Since the return value is an object, you can access the top and left properties depending on what you need.
+
+## Browser Support
+
+The table below indicates the lowest browser version ( and onward ) this method is expected to work on.
+
+| **Chrome** | **Firefox** | **Internet Explorer** | **Opera** | **Safari** |
+| :--------: | :---------: | :-------------------: | :-------: | :--------: |
+| 4+ | 3+ | 8+ | 3+[1] | 4+ |
+
+[1] I estimated this for Opera, because I couldn't find solid information on the first version that supported the properties I used.
